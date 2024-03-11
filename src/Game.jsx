@@ -32,6 +32,7 @@ function Game({ currentImage }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        // TODO put my own link
         const response = await fetch(
           `https://haminimi-where-is-waldo.glitch.me/images/${currentImage}`
         );
@@ -53,6 +54,8 @@ function Game({ currentImage }) {
     const fetchData = async () => {
       try {
         const response = await fetch(
+          // TODO put my own link
+
           `https://haminimi-where-is-waldo.glitch.me/game/finished`,
           {
             method: "POST",
@@ -74,6 +77,7 @@ function Game({ currentImage }) {
       gameOverModal.current && gameOverModal.current.showModal();
       sound(winSound);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [foundCharacters]);
 
   useEffect(() => {
@@ -161,7 +165,10 @@ function Game({ currentImage }) {
 
     const postScore = async () => {
       try {
+        // eslint-disable-next-line no-unused-vars
         const response = await fetch(
+          // TODO put my own link
+
           "https://haminimi-where-is-waldo.glitch.me/scores/submit",
           {
             method: "POST",
@@ -189,6 +196,8 @@ function Game({ currentImage }) {
     const restartTimer = async () => {
       try {
         setLoading(true);
+        // TODO put my own link
+
         const response = await fetch(
           `https://haminimi-where-is-waldo.glitch.me/images/${currentImage}`
         );

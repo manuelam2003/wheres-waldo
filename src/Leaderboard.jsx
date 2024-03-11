@@ -18,6 +18,7 @@ function Leaderboard() {
   function retrieveAllScores() {
     const fetchData = async () => {
       try {
+        // TODO put my own link
         const response = await fetch(
           "https://haminimi-where-is-waldo.glitch.me/scores"
         );
@@ -37,6 +38,7 @@ function Leaderboard() {
     sound(buttonSound);
     const fetchData = async () => {
       try {
+        // TODO Put my own link
         const response = await fetch(
           `https://haminimi-where-is-waldo.glitch.me/scores/${game}`
         );
