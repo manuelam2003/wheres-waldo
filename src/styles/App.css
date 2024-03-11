@@ -1,42 +1,326 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 20vh;
+  padding: 0px 20px;
+  font-size: 22px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.headerImage {
+  width: 300px;
+  position: absolute;
+  top: -10px;
+  left: 0px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.headerNav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.activeLink,
+.inactiveLink {
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.activeLink {
+  background-color: #f52549;
+  color: white;
+}
+
+.homeContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 30px;
+}
+
+.gameCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+  width: 100%;
+}
+
+.gameCard {
+  height: 350px;
+  position: relative;
+  border: 3px solid #f52549;
+  border-radius: 5px;
+}
+
+.cardDescription {
+  font-family: "Fredoka", sans-serif;
+  font-size: 28px;
+  text-align: left;
+}
+
+.gameCardImageContainer {
+  width: 100%;
+  height: 100%;
+}
+
+.gameCardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 5px;
+}
+
+.gameCard :hover {
+  filter: drop-shadow(0 0 0.2em #f52549);
+}
+
+.gameContainer {
+  padding: 30px;
+}
+
+.imageContainer {
+  display: inline-block;
+  position: relative;
+  width: 85%;
+}
+
+.gameImage {
+  border-radius: 10px;
+}
+
+.targetingBoxContainer {
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  width: 60px;
+  z-index: 10;
+}
+
+.targetingBox {
+  width: 60px;
+  height: 60px;
+  border: 3px solid crimson;
+  border-radius: 5px;
+}
+
+.characters {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  border: 2px solid white;
+  border-radius: 10px;
+  background-color: crimson;
+}
+
+.characters > button {
+  width: 100%;
+  padding: 0.2em 1.2em;
+  border: 2px solid white;
+  background-color: crimson;
+  color: white;
+}
+
+.characters > button:hover {
+  border-color: crimson;
+  background-color: white;
+  color: crimson;
+}
+
+.foundCharacterCircle {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  border: 5px solid mediumseagreen;
+  border-radius: 50px;
+}
+
+.gameOverModal {
+  width: 50vw;
+  height: 50vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2.5px solid #f52549;
+  border-radius: 10px;
+  background-color: white;
+  color: crimson;
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-align: left;
+}
+
+#usernameInput {
+  padding: 5px 10px;
+  border: 2px solid white;
+  border-radius: 5px;
+  background-color: #f52549;
+  color: white;
+}
+
+#usernameInput:focus {
+  outline: none;
+}
+
+.restartAndSubmit {
+  display: flex;
+  gap: 10px;
+}
+
+.restartButton,
+.submitButton {
+  color: crimson;
+}
+
+.leaderboardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  min-height: 80vh;
+  padding: 10px;
+  color: crimson;
+}
+
+.leaderboardCriteria {
+  display: flex;
+  gap: 10px;
+}
+
+.leaderboardScores {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.leaderboardScore {
+  width: 350px;
+  position: relative;
+  padding: 10px 15px;
+  font-family: "Fredoka", sans-serif;
+  font-size: 22px;
+  border: 5px solid #f52549;
+  border-radius: 5px;
+  background-color: crimson;
+  color: white;
+}
+
+.leaderboardScoreIndex {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+}
+
+.errorPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  min-height: 80vh;
+}
+
+.errorHomeButton {
+  background-color: #f52549;
+  color: white;
+}
+
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.firstStick,
+.secondStick,
+.thirdStick,
+.fourthStick,
+.fifthStick {
+  width: 10px;
+  height: 25px;
+  background-color: #f52549;
+  animation: load 1s ease-in-out infinite;
+}
+
+.firstStick {
+  animation-delay: 0.05s;
+}
+
+.secondStick {
+  animation-delay: 0.15s;
+}
+
+.thirdStick {
+  animation-delay: 0.3s;
+}
+
+.fourthStick {
+  animation-delay: 0.45s;
+}
+
+.fifthStick {
+  animation-delay: 0.6s;
+}
+
+@keyframes load {
+  0% {
+    transform: scaleY(1);
   }
-  to {
-    transform: rotate(360deg);
+
+  40% {
+    transform: scaleY(2);
+  }
+
+  60% {
+    transform: scaleY(1);
+  }
+
+  100% {
+    transform: scaleY(1);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.gitHubLinkContainer {
+  padding: 10px;
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.devicon-github-original {
+  font-size: 35px;
+  color: #f52549;
 }
