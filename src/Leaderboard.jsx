@@ -20,7 +20,7 @@ function Leaderboard() {
       try {
         // TODO put my own link
         const response = await fetch(
-          "https://haminimi-where-is-waldo.glitch.me/scores"
+          "https://wheres-waldo-backend1.adaptable.app/scores"
         );
         const data = await response.json();
         setLeaderboard(data.scores);
@@ -40,7 +40,7 @@ function Leaderboard() {
       try {
         // TODO Put my own link
         const response = await fetch(
-          `https://haminimi-where-is-waldo.glitch.me/scores/${game}`
+          `https://wheres-waldo-backend1.adaptable.app/scores/${game}`
         );
         const data = await response.json();
         setLeaderboard(data.scores);

@@ -34,7 +34,7 @@ function Game({ currentImage }) {
       try {
         // TODO put my own link
         const response = await fetch(
-          `https://haminimi-where-is-waldo.glitch.me/images/${currentImage}`
+          `https://wheres-waldo-backend1.adaptable.app/images/${currentImage}`
         );
         const data = await response.json();
         setCharacters(data.image.characters);
@@ -56,7 +56,7 @@ function Game({ currentImage }) {
         const response = await fetch(
           // TODO put my own link
 
-          `https://haminimi-where-is-waldo.glitch.me/game/finished`,
+          `https://wheres-waldo-backend1.adaptable.app/game/finished`,
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -169,7 +169,7 @@ function Game({ currentImage }) {
         const response = await fetch(
           // TODO put my own link
 
-          "https://haminimi-where-is-waldo.glitch.me/scores/submit",
+          "https://wheres-waldo-backend1.adaptable.app/scores/submit",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -199,7 +199,7 @@ function Game({ currentImage }) {
         // TODO put my own link
 
         const response = await fetch(
-          `https://haminimi-where-is-waldo.glitch.me/images/${currentImage}`
+          `https://wheres-waldo-backend1.adaptable.app/images/${currentImage}`
         );
         const data = await response.json();
         setCharacters(data.image.characters);
